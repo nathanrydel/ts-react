@@ -9,8 +9,14 @@ interface IBoxProps extends IBox {
   remove: (id: string) => void;
 }
 
-interface INewBoxProps extends IBox {
-  createBox: (id: string) => void;
+interface INewBoxProps {
+  createBox: (box: IBox) => void;
 }
 
-export type { IBox, IBoxProps, INewBoxProps };
+interface IFormData {
+  width: string;
+  height: string;
+  backgroundColor: string;
+}
+
+export type { IBox, IBoxProps, INewBoxProps, IFormData };
