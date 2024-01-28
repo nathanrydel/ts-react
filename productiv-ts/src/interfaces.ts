@@ -14,5 +14,16 @@ interface IEditableTodoProp extends ITodoProp {
   update: (todo: ITodo) => void;
 }
 
+interface IFormData {
+  title: string;
+  description: string;
+  priority: number;
+}
 
-export type { ITodo, ITodoProp, IEditableTodoProp };
+interface ITodoFormProp {
+  initialFormData: IFormData;
+  handleSave: (formData: IFormData) => void;
+}
+
+
+export type { ITodo, ITodoProp, IEditableTodoProp, IFormData, ITodoFormProp };

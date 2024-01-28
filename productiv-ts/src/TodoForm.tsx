@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 
-const defaultInitialFormData = { title: "", description: "", priority: 1 };
+import { IFormData, ITodoFormProp } from "./interfaces";
+
+const defaultInitialFormData: IFormData = { title: "", description: "", priority: 1 };
 
 /** Form for adding.
  *
@@ -11,11 +13,11 @@ const defaultInitialFormData = { title: "", description: "", priority: 1 };
  * { TodoApp, EditableTodo } -> TodoForm
  */
 
-function TodoForm({ initialFormData = defaultInitialFormData, handleSave }) {
-  const [formData, setFormData] = useState(initialFormData);
+function TodoForm({ initialFormData = defaultInitialFormData, handleSave }: ITodoFormProp) {
+  const [formData, setFormData] = useState<IFormData>(initialFormData);
 
   /** Update form input. */
-  function handleChange(evt) {
+  function handleChange(evt: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>): void {
     const input = evt.target;
     setFormData(formData => ({
       ...formData,
