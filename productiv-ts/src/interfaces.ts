@@ -11,7 +11,7 @@ interface ITodoProp {
 
 interface IEditableTodoProp extends ITodoProp {
   remove: (id: string) => void;
-  update: (id: string) => void;
+  update: (todo: ITodo) => void;
 }
 
 
