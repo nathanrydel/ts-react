@@ -1,5 +1,5 @@
 import React from "react";
-import { ITodo } from "./interfaces";
+import { ITodoProp } from "./interfaces";
 
 /** Simple presentation component for a todo.
  *
@@ -9,7 +9,7 @@ import { ITodo } from "./interfaces";
  * { EditableTodo, TopTodo } -> Todo
  **/
 
-function Todo({ todo }: ITodo) {
+function Todo({ todo }: ITodoProp) {
   return (
       <div className="Todo">
         <div><b>{todo.title}</b> <small>(priority: {todo.priority})</small></div>
